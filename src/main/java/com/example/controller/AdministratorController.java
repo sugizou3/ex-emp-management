@@ -19,12 +19,24 @@ public class AdministratorController {
     @Autowired
     AdministratorService service;
 
+    /**
+     * 管理者登録表示.
+     *
+     * @param form
+     * @return String 管理者登録UI用htmlタグのパス
+     */
     @GetMapping("/to-insert")
     public String toInsert(InsertAdministratorForm form) {
         System.out.println("gowegjewoijgweoigj");
         return "administrator/insert";
     }
 
+    /**
+     * 管理者登録のポスト処理.
+     *
+     * @param form
+     * @return String ログイン画面へリダイレクト
+     */
     @PostMapping("/insert")
     public String insert(InsertAdministratorForm form) {
         Administrator administrator = new Administrator();
@@ -35,6 +47,12 @@ public class AdministratorController {
         return "redirect:/";
     }
 
+    /**
+     * ログイン画面のUI表示.
+     *
+     * @param form
+     * @return String ログイン画面UIのhtmlへのパス
+     */
     @GetMapping("/")
     public String toLogin(LoginForm form) {
         return "administrator/login";
