@@ -26,4 +26,14 @@ public class EmployeeService {
         return repository.findAll();
     }
 
+    /**
+     * 主キーに一致する従業員情報を取得.
+     *
+     * @param id 主キー
+     * @return　従業員情報
+     */
+    public Employee showDetail(Integer id) {
+        return repository.findById(id);
+    }
+
 }

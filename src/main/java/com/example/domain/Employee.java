@@ -37,7 +37,7 @@ public class Employee {
     /**
      * メールアドレス
      */
-    private String mailAdress;
+    private String mailAddress;
     /**
      * 郵便番号
      */
@@ -45,7 +45,7 @@ public class Employee {
     /**
      * 住所
      */
-    private String adress;
+    private String address;
     /**
      * 電話番号
      */
