@@ -10,6 +10,12 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+/**
+ * administratorテーブルを操作するリポジトリ.
+ */
+
 @Repository
 
 public class AdministratorRepository {
@@ -56,7 +62,12 @@ public class AdministratorRepository {
                 = new MapSqlParameterSource()
                 .addValue("mailAdress", mailAdress)
                 .addValue("password", password);
-        return template.queryForObject(sql, param, ADMINISTRATOR_ROW_MAPPER);
+
+        List<Administrator> administratorList = template.query(sql, param, ADMINISTRATOR_ROW_MAPPER);
+        if (administratorList.isEmpty()) {
+            return null;
+        }
+        return administratorList.getFirst();
     }
 
 

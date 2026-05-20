@@ -2,6 +2,10 @@ package com.example.form;
 
 import lombok.*;
 
+/**
+ * ログイン時に使用するフォーム.
+ */
+
 @Getter
 @Setter
 @ToString
@@ -19,5 +23,5 @@ public class LoginForm {
      * パスワード
      */
     private String password;
-    
+
 }

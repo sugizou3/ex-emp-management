@@ -12,6 +12,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * employeeテーブルを操作するリポジトリ.
+ */
+
+
 @Repository
 
 public class EmployeeRepository {
@@ -64,6 +69,12 @@ public class EmployeeRepository {
         SqlParameterSource param = new MapSqlParameterSource("id", id);
         return template.queryForObject(sql, param, EMPLOYEE_ROW_MAPPER);
     }
+
+    /**
+     * 従業員情報を変更する.
+     *
+     * @param employee Employeeクラス　従業員情報
+     */
 
     public void update(Employee employee) {
         SqlParameterSource param
