@@ -17,11 +17,11 @@ public class InsertAdministratorForm {
     /**
      * メールアドレス
      */
-    private String mailAdress;
+    private String mailAddress;
     /**
      * パスワード
      */
     private String password;
 
-    
+
 }

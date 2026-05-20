@@ -33,6 +33,7 @@ public class AdministratorRepository {
                 VALUES (:name,:mailAddress,:password);
                 """;
 
+
         template.update(sql, param);
 
     }

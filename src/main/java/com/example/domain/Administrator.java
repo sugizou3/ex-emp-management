@@ -21,7 +21,7 @@ public class Administrator {
     /**
      * メールアドレス
      */
-    private String mailAdress;
+    private String mailAddress;
     /**
      * パスワード
      */
