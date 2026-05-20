@@ -15,8 +15,9 @@ public class AdministratorController {
     @Autowired
     AdministratorService service;
 
-    @GetMapping("to-insert")
+    @GetMapping("/to-insert")
     public String toInsert(InsertAdministratorForm form) {
+        System.out.println("gowegjewoijgweoigj");
         return "administrator/insert";
     }
 
