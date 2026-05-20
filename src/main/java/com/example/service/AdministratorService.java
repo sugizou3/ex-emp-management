@@ -29,7 +29,7 @@ public class AdministratorService {
      *
      * @param mailAddress 管理者のメールアドレス
      * @param password    管理者のパスワード
-     * @return Administrator メールとパスワードに一致する管理者の情報。
+     * @return メールとパスワードに一致する管理者の情報。
      */
     public Administrator login(String mailAddress, String password) {
         return repository.findByMailAddressAndPassword(mailAddress, password);

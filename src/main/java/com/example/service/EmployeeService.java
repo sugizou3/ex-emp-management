@@ -20,7 +20,7 @@ public class EmployeeService {
     /**
      * 従業員情報を全件取得する.
      *
-     * @return List<Employee>　従業員情報
+     * @return 従業員情報
      */
     public List<Employee> showList() {
         return repository.findAll();
@@ -30,10 +30,16 @@ public class EmployeeService {
      * 主キーに一致する従業員情報を取得.
      *
      * @param id 主キー
-     * @return　従業員情報
+     * @return 従業員情報
      */
     public Employee showDetail(Integer id) {
         return repository.findById(id);
+    }
+
+    public void updateDependentsCount(Integer employeeId, Integer newCount) {
+        Employee employee = repository.findById(employeeId);
+        employee.setDependentsCount(newCount);
+        repository.update(employee);
     }
 
 }
