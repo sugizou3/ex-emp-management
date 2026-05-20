@@ -18,7 +18,7 @@ public class AdministratorService {
      * AdministratorRepositoryを参照
      */
     @Autowired
-    AdministratorRepository repository;
+    private AdministratorRepository repository;
 
     public void insert(Administrator administrator) {
         repository.insert(administrator);
