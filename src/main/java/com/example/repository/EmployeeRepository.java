@@ -27,10 +27,9 @@ public class EmployeeRepository {
     private NamedParameterJdbcTemplate template;
 
     /**
-     * 従業員一覧情報を入社日順（降順）で取得する
-     * （従業員が存在しない場合はサイズ0件の従業員一覧を返す）.
+     * 従業員一覧情報を入社日順（降順）で取得（従業員が存在しない場合はサイズ0件の従業員一覧を返す）.
      *
-     * @return List<Employee>　Employeeのリストを返す.
+     * @return List<Employee>　Employeeのリスト.
      */
     public List<Employee> findAll() {
         String sql = """
@@ -49,8 +48,7 @@ public class EmployeeRepository {
     }
 
     /**
-     * 主キーから従業員情報を取得する
-     * （従業員が存在しない場合はSpringが自動的に例外を発生する）.
+     * 主キーから従業員情報を取得（従業員が存在しない場合はSpringが自動的に例外を発生する）.
      *
      * @param id 主キー
      * @return Employee　Employeeクラス
@@ -75,7 +73,6 @@ public class EmployeeRepository {
      *
      * @param employee Employeeクラス　従業員情報
      */
-
     public void update(Employee employee) {
         SqlParameterSource param
                 = new BeanPropertySqlParameterSource(employee);
@@ -97,6 +94,4 @@ public class EmployeeRepository {
                 """;
         template.update(sql, param);
     }
-
-
 }

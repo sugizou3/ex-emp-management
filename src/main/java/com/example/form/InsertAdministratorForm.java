@@ -5,15 +5,12 @@ import lombok.*;
 /**
  * 管理者登録時に使用するフォーム.
  */
-
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
-
 public class InsertAdministratorForm {
     /**
      * 名前
@@ -27,6 +24,4 @@ public class InsertAdministratorForm {
      * パスワード
      */
     private String password;
-
-
 }

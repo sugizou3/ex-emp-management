@@ -15,9 +15,7 @@ import java.util.List;
 /**
  * administratorテーブルを操作するリポジトリ.
  */
-
 @Repository
-
 public class AdministratorRepository {
     RowMapper<Administrator> ADMINISTRATOR_ROW_MAPPER
             = new BeanPropertyRowMapper<>(Administrator.class);
@@ -39,14 +37,12 @@ public class AdministratorRepository {
                 VALUES (:name,:mailAddress,:password);
                 """;
 
-
         template.update(sql, param);
 
     }
 
     /**
-     * メールアドレスとパスワードから管理者情報を取得する
-     * （1件も存在しない場合はnullを返す※）.
+     * メールアドレスとパスワードから管理者情報を取得する（1件も存在しない場合はnullを返す※）.
      *
      * @param mailAdress 管理者メールアドレス
      * @param password   管理者パスワード
@@ -69,6 +65,4 @@ public class AdministratorRepository {
         }
         return administratorList.getFirst();
     }
-
-
 }

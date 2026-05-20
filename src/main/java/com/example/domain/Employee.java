@@ -7,14 +7,12 @@ import java.util.Date;
 /**
  * 従業員情報を表すドメイン.
  */
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder
-
 public class Employee {
     /**
      * 主キー

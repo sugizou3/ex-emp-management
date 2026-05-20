@@ -11,7 +11,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-
 public class Administrator {
     /**
      * 主キー
