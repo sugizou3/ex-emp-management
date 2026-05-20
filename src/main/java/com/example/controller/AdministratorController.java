@@ -47,7 +47,6 @@ public class AdministratorController {
         BeanUtils.copyProperties(form, administrator);
 
         service.insert(administrator);
-        System.out.println(administrator);
         return "redirect:/";
     }
 
@@ -75,13 +74,18 @@ public class AdministratorController {
         Administrator administrator
                 = service.login(form.getMailAddress(), form.getPassword());
 
-        System.out.println(administrator);
         if (administrator == null) {
             model.addAttribute("errorMessage", "メールアドレス、またはパスワードが間違っています。");
             return "administrator/login";
         }
         session.setAttribute("administratorName", administrator.getName());
         return "redirect:/employee/show-list";
+    }
+
+    @GetMapping("/logout")
+    public String logout(LoginForm form) {
+        session.invalidate();
+        return "redirect:/";
     }
 
 

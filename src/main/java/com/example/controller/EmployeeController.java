@@ -52,9 +52,14 @@ public class EmployeeController {
         return "employee/detail";
     }
 
+    /**
+     * 従業員の扶養情報を更新する.
+     *
+     * @param form フォーム
+     * @return 従業員一覧画面
+     */
     @PostMapping("/update")
     public String update(UpdateEmployeeForm form) {
-        System.out.println(form.getId() + "------" + form.getDependentsCount());
         service.updateDependentsCount(form.getId(), form.getDependentsCount());
         return "redirect:/employee/show-list";
     }
