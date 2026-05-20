@@ -13,9 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public class AdministratorRepository {
-    /**
-     * レコードとJavaクラスのマッパー
-     */
     RowMapper<Administrator> ADMINISTRATOR_ROW_MAPPER
             = new BeanPropertyRowMapper<>(Administrator.class);
 
@@ -60,6 +57,6 @@ public class AdministratorRepository {
                 .addValue("password", password);
         return template.queryForObject(sql, param, ADMINISTRATOR_ROW_MAPPER);
     }
-    
+
 
 }
